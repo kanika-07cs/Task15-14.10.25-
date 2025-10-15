@@ -4,6 +4,7 @@
 This project is designed to predict a student's academic performance based on study habits, attendance, parental education, extracurricular activities, and other related features. The prediction is categorized into three performance levels: **Low**, **Medium**, and **High**. The application uses machine learning models (Random Forest and Gaussian Naive Bayes) to provide both a performance classification and an estimated final grade. A pie chart visualization displays the model's prediction probabilities for all performance categories.
 
 **Dataset link** : https://www.kaggle.com/datasets/prekshad2166/student-study-habits
+
 **Streamlit Link** : https://kanika-07cs-task15-14-10-25--app-bzxr8v.streamlit.app/
 ## Dataset Description
 The dataset (`student_study_habits.csv`) contains records of students with the following features:
