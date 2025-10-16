@@ -63,6 +63,7 @@ if submit:
     if pred_performance == "Fail":
         st.error(f"Predicted Performance: {pred_performance}\n\n"
                  "The student is likely to underperform. Consider improving study habits, attendance, and engagement.")
+    
     else:
         st.success(f"Predicted Performance: {pred_performance}\n\n"
                    "Excellent! The student is performing well and maintaining good academic habits.")
