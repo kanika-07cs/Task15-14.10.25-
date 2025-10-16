@@ -12,8 +12,7 @@ nb = models['GaussianNB']
 le_target = models['LabelEncoder']
 
 df = pd.read_csv("student_study_habits.csv")
-df['Performance'] = pd.cut(df['final_grade'], bins=[0, 59, 79, 100], labels=['Low', 'Medium', 'High'])
-performance_avg_grade = df.groupby('Performance', observed=True)['final_grade'].mean().to_dict()
+df['Performance'] = pd.cut(df['final_grade'], bins=[0, 55, 100], labels=['Fail','Pass'])
 
 st.title("Student Performance Prediction App")
 st.write("Predict student performance using Random Forest or Gaussian Naive Bayes.")
@@ -61,4 +60,9 @@ if submit:
 
     pred_performance = le_target.inverse_transform(pred_class)[0]
     
-    st.success(f"Predicted Performance: {pred_performance}")
+    if pred_performance == "Fail":
+        st.error(f"Predicted Performance: {pred_performance}\n\n"
+                 "The student is likely to underperform. Consider improving study habits, attendance, and engagement.")
+    else:
+        st.success(f"Predicted Performance: {pred_performance}\n\n"
+                   "Excellent! The student is performing well and maintaining good academic habits.")
